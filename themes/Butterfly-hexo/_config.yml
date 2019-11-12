@@ -7,16 +7,18 @@
 menu:
   Home: / || fa fa-home
   Archives: /archives/ || fa fa-archive
-  Tags: /tags/ || fa fa-tags
+  # Tags: /tags/ || fa fa-tags
   # Categories: /categories/ || fa fa-folder-open
-  Categories||fa fa-folder-open:
-    - Learning notes || /categories/learning-notes/ ||
-    - Research progress || /categories/research-progress/ ||
-    - Life || /categories/life/ ||
-  Link: /link/ || fa fa-link
+  # Categories||fa fa-folder-open:
+  #   - Learning notes || /categories/learning-notes/ ||
+  #   - Research progress || /categories/research-progress/ ||
+  #   - Life || /categories/life/ ||
+  # Link: /link/ || fa fa-link
   About: /about/ || fa fa-heart
+  Github: https://github.com/yoooooohu || fa fa-github
+  Netease Cloud: https://music.163.com/#/user/home?id=111831866 || fa fa-music
   List||fa fa-list:
-    - Music || /music/ || fa fa-music
+    - Music || https://music.163.com/#/user/home?id=111831866 || fa fa-music
     - Movie || /movies/ || fa fa-film
 
 # Favicon
@@ -57,8 +59,9 @@ copy:
 # ---------------
 social:
   fa fa-github: https://github.com/yoooooohu
-  fa fa-envelope: mailto:yoooooohu@foxmail.com
-  fa fa-rss: /atom.xml
+  fa fa-envelope: mailto:yoooooohu@foxmail.com/
+  fa fa-book: https://dblp.uni-trier.de/pers/hd/h/Hu:Youpeng/
+  fa fa-rss: https://blog.csdn.net/weixin_43845931
 
 ####    search    ####
 # Algolia search
@@ -105,10 +108,10 @@ google_analytics:
 # Post info settings
 # ---------------
 # avatar: /img/avatar.png
-avatar: img/avatar.jpg
+avatar: https://yoooooohu.github.io/img/avatar.jpg
 
 # the banner image of index
-top_img: img/top_img.jpg
+top_img: https://yoooooohu.github.io/img/top_img.jpg
 # 以下鏈接是動態壁紙，每次刷新會更換
 # https://source.unsplash.com/collection/collectionid/1600x900
 # https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture
@@ -116,27 +119,27 @@ top_img: img/top_img.jpg
 # https://api.dujin.org/bing/1366.php
 
 # if the banner of page not setting,it will show the top_img
-default_top_img: img/top_img.jpg
+default_top_img: https://yoooooohu.github.io/img/top_img.jpg
 
 # the default cover of the post
-default_cover: img/top_img.jpg
+default_cover: https://yoooooohu.github.io/img/top_img.jpg
 
 # the banner image of archive page
-archive_img: img/archive-bg.jpg
+archive_img: https://yoooooohu.github.io/img/archive-bg.jpg
 
 # the banner image of tag page
-tag_img: img/tag-bg.png
+tag_img: https://yoooooohu.github.io/img/tag-bg.png
 
 # the banner image of category page
-category_img: img/category-bg.png
+category_img: https://yoooooohu.github.io/img/category-bg.png
 
 # 如果你有使用hexo-douban去生成movie界面，可配置這個
-movies_img: img/movie.jpg
+movies_img: https://yoooooohu.github.io/img/movie.jpg
 
 # if the photo link cannot connect,it will show that
 lodding_bg:
-  flink: /img/friend_404.gif
-  post_page: /img/404.jpg
+  flink: https://yoooooohu.github.io/img/friend_404.gif
+  post_page: https://yoooooohu.github.io/img/404.jpg
 
 post_meta:
   date_type: both # or created or updated 文章日期是创建日或者更新日或都显示
@@ -344,9 +347,9 @@ canvas_ribbon_piao:
 canvas_nest:
   enable: true
   color: '0,0,255' #color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
-  opacity: 0.7 # the opacity of line (0~1), default: 0.5.
+  opacity: 0.5 # the opacity of line (0~1), default: 0.5.
   zIndex: -1 # z-index property of the background, default: -1.
-  count: 99 # the number of lines, default: 99.
+  count: 50 # the number of lines, default: 99.
   mobile: false # false 手機端不顯示 true 手機端顯示
 
 # 打字效果
@@ -450,7 +453,7 @@ aside:
 
 # 網站公告
 announcement:
-  content: Welcome to my Blogs. This Pages updates the blog and the essay irregularly --Youpeng Hu
+  content: Welcome to my Blogs. This Pages updates the blog and the essay irregularly~
 
 # busuanzi count for PV / UV in site
 # 訪問人數
@@ -486,7 +489,7 @@ translate:
 
 #閲讀模式
 readmode:
-  enable: true
+  enable: false
 
 # 夜間模式
 darkmode:

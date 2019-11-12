@@ -1,9 +1,10 @@
 ---
 title: 深度学习计算机视觉实战(一)：-基于pytorch框架的MNIST手写数字识别详解
 date: 2019-04-01 12:00:00
-categories: learning-notes
+categories: Learning Note
 description: 本文基于pytorch框架、MNIST数据集，使用LeNet对MNIST数据集实现高精度手写数字识别。
 tags: [Computer Vision, pytorch]
+cover: img/blogs/2.jpg
 ---
 # 前言
 数字识别，因其识别对象蕴含信息简单（灰度图单通道即可）、应用场景广阔，成为了传统图像处理的一大Key Topic. 深度学习的兴起使得端到端学习取代了机器学习+手工设计的传统识别算法成为了热门。
