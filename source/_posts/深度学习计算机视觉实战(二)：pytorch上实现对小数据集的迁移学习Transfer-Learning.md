@@ -4,7 +4,7 @@ date: 2019-04-22 12:00:00
 categories: Learning Note
 description: 本文从概念出发，讨论迁移学习在不同场景下的使用方法，并通过实例在pytorch上运行来进一步巩固。
 tags: [Computer Vision, Transfer Learning, pytorch]
-cover: img/blogs/3.jpg
+cover: https://yoooooohu.github.io/img/blogs/3.jpg
 ---
 
 # 前言
