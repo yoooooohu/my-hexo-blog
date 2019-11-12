@@ -211,7 +211,7 @@ disqus:
 
 # valine comment system. https://valine.js.org
 valine:
-  enable: true # if you want use valine,please set this value is true
+  enable: false # if you want use valine,please set this value is true
   appId: # leancloud application app id
   appKey: # leancloud application app key
   notify: false # valine mail notify (true/false) https://github.com/xCss/Valine/wiki
@@ -259,10 +259,10 @@ qihu_site_verification:
 Flink:
   headline: Link
   info_headline: my Blog's info
-  name: Blog name - Youpeng Hu
-  address: Blog address - https://yoooooohu.github.io/
-  avatar: Blog avatar - https://yoooooohu.github.io/img/avatar.png
-  info: Blog info - The harder, the luckier
+  name: Blog name： Youpeng Hu
+  address: Blog address： https://yoooooohu.github.io/
+  avatar: Blog avatar： https://yoooooohu.github.io/img/avatar.png
+  info: Blog info： The harder, the luckier
   comment: Welcome~
 
 # 打賞按鈕
@@ -279,7 +279,7 @@ reward:
 # 推薦文章
 related_post:
   enable: true
-  limit: 6 # 顯示推薦文章數目
+  limit: 3 # 顯示推薦文章數目
 
 ####    美化/效果    ####
 #--------------------------------
@@ -513,8 +513,8 @@ medium_zoom:
 snackbar:
   enable: false
   position: bottom-left
-  bg_light: '#49b1f5' #light mode時彈窗背景
-  bg_dark: '#2d3035' #dark mode時彈窗背景
+  bg_light: '#49b1f5' # light mode時彈窗背景
+  bg_dark: '#2d3035' # dark mode時彈窗背景
 
 #百度推送
 baidu_push:
@@ -535,7 +535,7 @@ note:
   #  - disabled  disable all CSS styles import of note tag.
   style: flat
   icons: true
-  border_radius: 3
+  border_radius: 6
   # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
   # Offset also applied to label tag variables. This option can work with disabled note tag.
   light_bg_offset: 0

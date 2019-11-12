@@ -1,27 +1,27 @@
 class:
-  class_name: 友情鏈接
+  class_name: Related Link
   link_list:
     1:
-      name: xxx
-      link: https://blog.xxx.com
-      avatar: https://cdn.xxxxx.top/avatar.png
-      descr: xxxxxxx
+      name: IIPL
+      link: http://www.iipl.com.cn/
+      avatar: http://www.iipl.com.cn/Public/uploads/images/5cb720d5298c2.jpg
+      descr: IIPL Laboratory, Hangzhou Dianzi University
     2:
-      name: xxxxxx
-      link: https://www.xxxxxxcn/
-      avatar: https://xxxxx/avatar.png
-      descr: xxxxxxx  
+      name: iMoon-Lab
+      link: http://www.gaoyue.org/cn_tsinghua/index.htm
+      avatar: http://www.gaoyue.org/cn_tsinghua/resrc/1.gif
+      descr: iMoon-Lab, Tsinghua University 
 
-class2:
-   class_name: 鏈接無效
-   link_list:
-     1:
-       name: 夢xxx
-       link: https://blog.xxx.com
-       avatar: https://xxxx/avatar.png
-       descr: xxxx
-     2:
-       name: xx
-       link: https://www.axxxx.cn/
-       avatar: https://x
-       descr: xx
+# class2:
+#    class_name: 鏈接無效
+#    link_list:
+#      1:
+#        name: 夢xxx
+#        link: https://blog.xxx.com
+#        avatar: https://xxxx/avatar.png
+#        descr: xxxx
+#      2:
+#        name: xx
+#        link: https://www.axxxx.cn/
+#        avatar: https://x
+#        descr: xx
