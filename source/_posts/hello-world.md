@@ -1,38 +1,21 @@
 ---
 title: Hello World
+date: 2019-11-12 12:00:00
+categories: life
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+Today is November 12, the annual boys' day, my personal blog was officially launched.
 
-## Quick Start
+I am Youpeng Hu, an ordinary graduate student from Shandong university in mainland China. I graduated from hangzhou dianzi university majoring in automation. Currently studying in the major of computer and science and technology in shandong university, and participate in scientific research activities fellowing professor Chenggang Yan from IIPL laboratory and professor Yue Gao from iMoon-lab.
+My research direction includes but is not limited to:
 
-### Create a new post
+> Brain Computer Interface
 
-``` bash
-$ hexo new "My New Post"
-```
+> Semantic Segmentation
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+In the future, I will record some of my study notes, research outputs and even a little bit of life on this site. It's all fun, and I want to be motivated and gain pleasure. Please give me more advice in the future.
 
-### Run server
+My Personal Blog:   https://yoooooohu.github.io/
+My Email:           yoooooohu@foxmail.com
+My Github:          https://github.com/yoooooohu
 
-``` bash
-$ hexo server
-```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+Youpeng Hu
