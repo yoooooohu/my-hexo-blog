@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
+title: Youpeng Hu's Blog
+subtitle: 'To strive, to seek, to find, and not to yield.'
 description: ''
-keywords:
-author: John Doe
+keywords: 'Computer Science, Automation, Computer Vision, Semantic Segmentaion, Brain Computer Interface'
+author: Youpeng Hu
 language: en
 timezone: ''
 
@@ -90,7 +90,12 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: Butterfly
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
