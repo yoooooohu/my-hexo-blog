@@ -9,7 +9,7 @@ menu:
   Archives: /archives/ || fa fa-archive
   Tags: /tags/ || fa fa-tags
   Categories: /categories/ || fa fa-folder-open
-  # Link: /link/ || fa fa-link
+  Link: /link/ || fa fa-link
   Github: https://github.com/yoooooohu || fa fa-github
   Netease Cloud: https://music.163.com/#/user/home?id=111831866 || fa fa-music
   About Me: https://yoooooohu.github.io/2019/11/12/Hello-World/ || fa fa-heart
