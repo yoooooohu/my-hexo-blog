@@ -90,8 +90,10 @@ mathjax:
 # KaTeX
 # ---------------
 katex:
-  enable: false
+  enable: true
   hide_scrollbar: true
+  cdn:
+    css: https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css
 
 ####   Analysis    ####
 # ---------------

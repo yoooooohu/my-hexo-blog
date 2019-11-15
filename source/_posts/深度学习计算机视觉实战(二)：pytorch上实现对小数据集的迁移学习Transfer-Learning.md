@@ -3,8 +3,8 @@ title: 深度学习计算机视觉实战(二) ：pytorch上实现对小数据集
 date: 2019-04-22 12:00:00
 categories: Learning Note
 description: 本文从概念出发，讨论迁移学习在不同场景下的使用方法，并通过实例在pytorch上运行来进一步巩固。
-tags: [Computer Vision, Transfer Learning, pytorch]
-cover: https://yoooooohu.github.io/img/blogs/3.jpg
+tags: [Computer Vision, Transfer Learning, PyTorch]
+cover: https://yoooooohu.github.io/img/blogs/2019-04-22/cover.jpg
 ---
 
 # 前言
@@ -349,7 +349,7 @@ epoch | 训练集损失值 | 训练集准确度(%) | 验证集损失值| 验证�
 20|0.1232|94.26|0.1301|96.08
 25|0.1864|93.64|0.1273|**96.73**
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190422212120393.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg0NTkzMQ==,size_16,color_FFFFFF,t_70#pic_center)
+![预测结果](https://yoooooohu.github.io/img/blogs/2019-04-22/1.jpg)
 
 **方案二：固定特征提取器**
 
@@ -362,7 +362,7 @@ epoch | 训练集损失值 | 训练集准确度(%) | 验证集损失值| 验证�
 20|0.1892|94.26|0.1772|**96.08**
 25|0.2136|91.39|0.1755|95.42
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190422212130664.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg0NTkzMQ==,size_16,color_FFFFFF,t_70#pic_center)
+![预测结果](https://yoooooohu.github.io/img/blogs/2019-04-22/2.jpg)
 
 ## 完整训练源码
 ***github链接***

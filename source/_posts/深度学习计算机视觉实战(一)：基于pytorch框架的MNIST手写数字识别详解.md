@@ -3,80 +3,99 @@ title: 深度学习计算机视觉实战(一)：基于pytorch框架的MNIST手�
 date: 2019-04-01 12:00:00
 categories: Learning Note
 description: 本文基于pytorch框架、MNIST数据集，使用LeNet对MNIST数据集实现高精度手写数字识别。
-tags: [Computer Vision, pytorch]
-cover: https://yoooooohu.github.io/img/blogs/2.jpg
+tags: [Computer Vision, PyTorch]
+cover: https://yoooooohu.github.io/img/blogs/2019-04-01/cover.jpg
 ---
 # 前言
 数字识别，因其识别对象蕴含信息简单（灰度图单通道即可）、应用场景广阔，成为了传统图像处理的一大Key Topic. 深度学习的兴起使得端到端学习取代了机器学习+手工设计的传统识别算法成为了热门。
 本文基于pytorch框架、MNIST数据集，使用LeNet对MNIST数据集实现高精度手写数字识别。
 
 
-![MNIST数据集, 引自WIKI](https://img-blog.csdnimg.cn/20190410000353382.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg0NTkzMQ==,size_16,color_FFFFFF,t_70#pic_center)
+![MNIST数据集, 引自WIKI](https://yoooooohu.github.io/img/blogs/2019-04-01/1.png)
 > 数据集介绍参考维基百科：[MNIST database](https://en.wikipedia.org/wiki/MNIST_database).
 
 # LeNet-5模型介绍
 LeNet-5出自Y. L. LeCun的论文Gradient-Based Learning Applied to Document Recognition，是一种专门设计于场景”手写体字符识别“的非常高效的卷积神经网络。LeNet-5这个网络虽然很小，但是它包含了深度学习的基本模块：卷积层，池化层，全链接层。
 原文中的网络结构图见下：
-![原文网络结构图](https://img-blog.csdnimg.cn/20190410003123681.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg0NTkzMQ==,size_16,color_FFFFFF,t_70#pic_center)LeNet-5不含输入共7层，每个层有多个Feature Map，每个FeatureMap通过一种卷积滤波器提取输入的一种特征。
+![原文网络结构图](https://yoooooohu.github.io/img/blogs/2019-04-01/2.png)
+LeNet-5不含输入共7层，每个层有多个Feature Map，每个FeatureMap通过一种卷积滤波器提取输入的一种特征。
 
 ## 各层参数
 **Input** 
-Parameter    | Value
--------- | -----
+
+Parameter | Value
+----- | -----
 Input | 32x32x1
+
 **Conv1 卷积层** 
-Parameter    | Value
--------- | -----
+
+Parameter | Value
+----- | -----
 Input | 32x32x1
 Kernel Size  | 5x5
 Kernel Number  | 6
 Stride  | 1
 Output | 28x28x6
+
 **Pool2 池化层** 
-Parameter    | Value
--------- | -----
+
+Parameter | Value
+----- | -----
 Input | 28x28x6
 Kernel Size  | 2x2
 Stride  | 2
 Output | 14x14x6
+
 **Conv3 卷积层** 
-Parameter    | Value
--------- | -----
+
+Parameter | Value
+----- | -----
 Input | 14x14x6
 Kernel Size  | 5x5
 Kernel Number  | 16
 Stride  | 1
 Output | 10x10x16
+
 **Pool4 池化层** 
-Parameter    | Value
--------- | -----
+
+Parameter | Value
+----- | -----
 Input | 10x10x16
 Kernel Size  | 2x2
 Stride  | 2
 Output | 5x5x16
+
 **Conv5 卷积层** 
-Parameter    | Value
--------- | -----
+
+Parameter | Value
+----- | -----
 Input | 5x5x16
 Kernel Size  | 5x5
 Kernel Number  | 120
 Stride  | 1
 Output | 1x1x120
+
 **F6 全连接层** 
-Parameter    | Value
--------- | -----
+
+Parameter | Value
+----- | -----
 Input | 120
 Output | 84
+
 **Output 全连接层** 
-Parameter    | Value
--------- | -----
+
+Parameter | Value
+----- | -----
 Input | 84
 Output | 10
 
 > 百度学术链接：[Gradient-Based Learning Applied to Document Recognition](http://xueshu.baidu.com/usercenter/paper/show?paperid=80fd293244903d8233327d0e5ba6de62&site=xueshu_se).
 > 注：本文发表于1998年，原文中的部分内容经过今年的发展有了更好的选择，如ReLU激活函数的优越性、最大池化层代替平均池化层的使用会获得更好的结果等，故实现过程中有些许改动及优化。
+
 # Pytorch代码详解
+
 ## 开发环境
+
 工具包| 版本
 -------- | -----
 python | 3.6.2
@@ -84,8 +103,11 @@ torch | 1.0.0
 torchvision|0.2.1
 visdom|0.1.7
 matplotlib|2.0.2
+
 ## 代码详解
+
 ### 库依赖
+
 ```python
 # standard library
 import os 
@@ -98,6 +120,7 @@ import torchvision						# torch vision library
 import matplotlib.pyplot as plt 		# plot 2D data, Visualization
 import visdom 							# python -m visdom.server
 ```
+
 ### 超参定义
 ```python
 torch.manual_seed(1)    # reproducible 设定生成随机数的种子，并返回一个 torch._C.Generator 对象
@@ -108,8 +131,11 @@ BATCH_SIZE = 8192		# Data number per batch
 LR = 0.001              # learning rate
 VISDOM = True           # 绘图
 ```
+
 > torch.manual_seed(1) 使得每次得到的随机数(参数初始化)是固定的，无需固定随机参数可删。
+
 ### 数据集下载打包
+
 torchvision.datasets中包含了MNIST数据集，我们无需另外下载。该部分自动检测数据集是否置于工作路径下，若未检测到则自动下载。
 我们采用mini-batch梯度下降法进行训练，故需要生成相应的mini-batch训练集和数据集。
 ```python
@@ -276,12 +302,17 @@ for epoch in range(EPOCH):
                      Y=torch.Tensor([loss]), win='testLoss', update='append')
     torch.save(myLeNet, './ModelBackup/MNIST_lenet_model_%d_%f.pkl'%(epoch, testAcc))
 ```
+
 最后保存模型(建议每隔几个epoch保存备用)：
+
 ```python
 torch.save(myLeNet, './ModelBackup/MNIST_lenet_model_%d_%f.pkl'%(epoch, testAcc))
 ```
+
 这样，你就有一个专门处理手写数字的简单模型了。
+
 ## 运行说明
+
  1. 终端启动visdom server:
  ```
  python -m visdom.server
@@ -301,16 +332,17 @@ epoch | 训练集损失值 | 训练集准确度(%) | 测试集损失值| 测试�
 140|2.868e-2|99.51|3.873e-2|98.86
 200|1.300e-2|99.96|4.108e-2|98.85
 250|6.061e-3|99.89|3.226e-2|98.91
+
  在约90轮训练后，模型对训练集开始出现过拟合现象，测试集准确度随着epoch的增大变化较小，故90轮的模型较好。
 
 训练集损失值曲线：
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190411134135493.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg0NTkzMQ==,size_16,color_FFFFFF,t_70#pic_center)
+![训练集损失值曲线](https://yoooooohu.github.io/img/blogs/2019-04-01/3.png)
 训练集准确度曲线：
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190411134105902.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg0NTkzMQ==,size_16,color_FFFFFF,t_70#pic_center)测试集损失值曲线：
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190411134159516.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg0NTkzMQ==,size_16,color_FFFFFF,t_70#pic_center)
+![训练集准确度曲线](https://yoooooohu.github.io/img/blogs/2019-04-01/4.png)
+测试集损失值曲线：
+![测试集损失值曲线](https://yoooooohu.github.io/img/blogs/2019-04-01/5.png)
 测试集准确度曲线：
-
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190411134121505.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg0NTkzMQ==,size_16,color_FFFFFF,t_70#pic_center)
+![测试集准确度曲线](https://yoooooohu.github.io/img/blogs/2019-04-01/6.png)
 ## 模型实测
 改变打开的图片文件，可以判别数字并计算概率。
 **整体思路**
@@ -370,13 +402,16 @@ print('label:', npCorrect_label, 'similarity :', similarity[npCorrect_label]*100
 ```
 ### 测试结果
 图片取自网络(随机截图)。
+
 图片| 识别结果| 置信度(%)
--------- | -------- | ----------- | -----------
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190412191002272.png)|2|94.90
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190412191134858.png)|5|99.85
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2019041219120480.png)|7|97.25
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190412191208842.png)|8|98.19
+-------- | -------- | -----------
+![2](https://yoooooohu.github.io/img/blogs/2019-04-01/7.png)|2|94.90
+![5](https://yoooooohu.github.io/img/blogs/2019-04-01/8.png)|5|99.85
+![7](https://yoooooohu.github.io/img/blogs/2019-04-01/9.png)|7|97.25
+![8](https://yoooooohu.github.io/img/blogs/2019-04-01/10.png)|8|98.19
+
 ## 完整训练源码
+
 ***github链接***
 > https://github.com/HYPENG1/MNIST_train_LeNet/tree/YoooHu
 
@@ -562,6 +597,7 @@ for epoch in range(EPOCH):
 ```
 
 ## 修改记录
+
 Time| Note | Author
 -------- | ----- | -------
 19.4.11| 原始版本 | Yooo_Hu
