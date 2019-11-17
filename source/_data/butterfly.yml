@@ -106,7 +106,7 @@ google_analytics:
 # Post info settings
 # ---------------
 # avatar: /img/avatar.png
-avatar: https://yoooooohu.github.io/img/avatar.png
+avatar: https://yoooooohu.github.io/img/avatar.jpg
 
 # the banner image of index
 top_img: https://yoooooohu.github.io/img/top_img.jpg
@@ -263,7 +263,7 @@ Flink:
   info_headline: my Blog's info
   name: Blog name： Youpeng Hu
   address: Blog address： https://yoooooohu.github.io/
-  avatar: Blog avatar： https://yoooooohu.github.io/img/avatar.png
+  avatar: Blog avatar： https://yoooooohu.github.io/img/avatar.jpg
   info: Blog info： The harder, the luckier
   comment: Welcome~
 
