@@ -103,3 +103,31 @@ deploy:
   type: git
   repository: https://github.com/yoooooohu/yoooooohu.github.io.git
   branch: master  
+
+# live2d-widget-model
+live2d:
+  enable: true
+  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  tagMode: false
+  log: false
+  model:
+    use: live2d-widget-model-koharu
+    scale: 1
+    hHeadPos: 0.5
+    vHeadPos: 0.618
+  display:
+    position: left
+    width: 250
+    height: 500
+    # superSample: 2
+    hOffset: 0
+    vOffset: -70
+  mobile:
+    show: false
+    scale: 0.5
+  react:
+    opacity: 0.6
+  
