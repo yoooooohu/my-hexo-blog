@@ -3,14 +3,14 @@ class:
   link_list:
     1:
       name: IIPL
-      link: http://www.iipl.com.cn/
-      avatar: http://www.iipl.com.cn/Public/uploads/images/5cb720d5298c2.jpg
+      link: http://iipl.hdu.edu.cn/
+      avatar: http://iipl.hdu.edu.cn/Public/uploads/images/5cb720d5298c2.jpg
       descr: IIPL Laboratory, Hangzhou Dianzi University
     2:
       name: iMoon-Lab
       link: http://www.gaoyue.org/cn_tsinghua/index.htm
-      avatar: http://www.gaoyue.org/cn_tsinghua/resrc/1.gif
-      descr: iMoon-Lab, Tsinghua University 
+      avatar: http://www.gaoyue.org/cn/static/img/group1.jpg
+      descr: iMoon-Lab, Tsinghua University
 
 # class2:
 #    class_name: 鏈接無效
